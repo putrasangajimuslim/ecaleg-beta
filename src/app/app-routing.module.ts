@@ -9,13 +9,19 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: AppLayoutComponent
+    component: AppLayoutComponent,
+    children: [
+      {
+        path: 'master',
+        loadChildren: () => import('./modules/masters/masters.module').then(r => r.MastersModule)
+      }
+    ]
   },
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'auth/login',
-},
+      path: '',
+      pathMatch: 'full',
+      redirectTo: 'auth/login',
+  },
 ];
 
 @NgModule({

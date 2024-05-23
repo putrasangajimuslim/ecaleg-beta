@@ -85,7 +85,6 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'Logout',
                         icon: 'pi pi-fw pi-sign-out',
-                        routerLink: ['login'],
                         command: () => this.logout()
                     },
                 ]
