@@ -11,12 +11,18 @@ export class AppMenuComponent implements OnInit {
 
     model: any[] = [];
 
+    role?: string;
+
     constructor(
         public layoutService: LayoutService,
-        private router: Router
-    ) { }
+        private router: Router,
+    ) { 
+    }
 
     ngOnInit() {
+        if (this.role === 'admin' || this.role === 'Administration') {
+
+        } 
         this.model = [
             {
                 items: [
@@ -93,7 +99,7 @@ export class AppMenuComponent implements OnInit {
     }
 
     logout() {
-        location.reload();
+        sessionStorage.clear();
         this.router.navigate(['auth/login']);
     }
 }
